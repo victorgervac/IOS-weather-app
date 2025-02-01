@@ -8,7 +8,7 @@
 
 import Foundation
 struct WeatherManager{
-    let weatherURL = "https://api.openweathermap.org/data/2.5/ name}&appid=KEY&unit=standard"
+    let weatherURL = "https://api.openweathermap.org/data/2.5/ name}&appid=5bce70e3e178f30e3b8f94ec4317e3b7&unit=standard"
     
     func fetchWeather(cityName: String){
         let urlString = "\(weatherURL)&q=\(cityName)"
@@ -39,7 +39,7 @@ struct WeatherManager{
         let decoder = JSONDecoder()
         do {
             let docodedData = try decoder.decode(WeatherData.self, from: weatherData)
-            print(docodedData .name)
+            print(docodedData.main.temp)
         } catch {
             print(error)
             

@@ -16,3 +16,11 @@ struct WeatherData:Decodable{
 struct Main: Decodable{
     let temp: Double
 }
+struct Terms: Decodable {
+    let id:Int
+    let title:String
+    let position_type:String
+    let user_id:Int
+    let created_at:Date
+    let updated_at:Date
+}

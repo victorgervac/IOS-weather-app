@@ -8,41 +8,52 @@
 
 import Foundation
 struct WeatherManager{
-    let weatherURL = "https://api.openweathermap.org/data/2.5/ name}&appid=5bce70e3e178f30e3b8f94ec4317e3b7&unit=standard"
+    let weatherURL = "http://localhost:3000/terms/"
     
     func fetchWeather(cityName: String){
-        let urlString = "\(weatherURL)&q=\(cityName)"
+        let urlString = "\(weatherURL)"
         print(urlString)
         performRequest(urlString: urlString)
     }
-    func performRequest(urlString: String){
-        if let url = URL(string: urlString){
-            
-            let session = URLSession(configuration: .default)
-//            completionHandler takes a function waiting for answer
-            let task =  session.dataTask(with: url) {(data, response, error) in
-                if error != nil{
-                    print(error!)
-                    return
-                }
-                
-                if let safeData = data{
-                    self.parseJSON(weatherData: safeData)
-//                    print(String(data: safeData, encoding: .utf8)!)
-                }
+    func performRequest(urlString: String, method: String = "GET", body: Data? = nil) {
+        guard let url = URL(string: urlString) else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = method
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        if let body = body {
+            request.httpBody = body
+        }
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error: \(error)")
+                return
             }
             
-            task.resume()
+            if let safeData = data {
+                print("Response Data: \(String(data: safeData, encoding: .utf8) ?? "Invalid Data")")
+                if method == "GET" {
+                    parseJSON(weatherData: safeData)
+                }
+            }
         }
+        
+        task.resume()
     }
+    
     func parseJSON(weatherData: Data){
         let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
         do {
             let docodedData = try decoder.decode(WeatherData.self, from: weatherData)
-            print(docodedData.main.temp)
+            print(docodedData)
+            
         } catch {
             print(error)
-            
         }
     }
     

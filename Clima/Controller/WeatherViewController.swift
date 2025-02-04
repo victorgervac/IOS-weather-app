@@ -33,12 +33,10 @@ class WeatherViewController: UIViewController,UITextFieldDelegate {
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if textField.text != ""{
-            return true
-        }else{
-            textField.placeholder = "Enter city name"
-            return false
-        }
+   
+         return true
+        
+        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {

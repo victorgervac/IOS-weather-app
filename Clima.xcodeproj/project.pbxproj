@@ -16,6 +16,7 @@
 		ADAA27CE231BC87F00365194 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ADAA27CD231BC87F00365194 /* README.md */; };
 		D2E4A6042D4BFBB2007E5108 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E4A6032D4BFBB2007E5108 /* WeatherManager.swift */; };
 		D2E4A6062D4C170C007E5108 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E4A6052D4C170C007E5108 /* WeatherData.swift */; };
+		D2E4A6082D55332D007E5108 /* TermCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E4A6072D55332D007E5108 /* TermCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		ADAA27CD231BC87F00365194 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D2E4A6032D4BFBB2007E5108 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherManager.swift; path = Clima/WeatherManager.swift; sourceTree = SOURCE_ROOT; };
 		D2E4A6052D4C170C007E5108 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherData.swift; path = Clima/WeatherData.swift; sourceTree = SOURCE_ROOT; };
+		D2E4A6072D55332D007E5108 /* TermCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TermCard.swift; path = Clima/TermCard.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				D2E4A6032D4BFBB2007E5108 /* WeatherManager.swift */,
 				D2E4A6052D4C170C007E5108 /* WeatherData.swift */,
+				D2E4A6072D55332D007E5108 /* TermCard.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				ADAA27B1231BBFAF00365194 /* AppDelegate.swift in Sources */,
 				D2E4A6042D4BFBB2007E5108 /* WeatherManager.swift in Sources */,
 				ADAA27B3231BBFAF00365194 /* SceneDelegate.swift in Sources */,
+				D2E4A6082D55332D007E5108 /* TermCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

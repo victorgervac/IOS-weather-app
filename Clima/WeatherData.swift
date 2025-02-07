@@ -11,16 +11,14 @@ struct WeatherData:Decodable{
     let name: String
     let main: Main
     
-    
 }
 struct Main: Decodable{
     let temp: Double
 }
-struct Terms: Decodable {
-    let id:Int
-    let title:String
-    let position_type:String
-    let user_id:Int
-    let created_at:Date
-    let updated_at:Date
+//does both codebale and decodeable
+struct Terms: Codable {
+    let id: Int
+    let title: String
+    let position_type: String
+    let user_id: Int
 }
